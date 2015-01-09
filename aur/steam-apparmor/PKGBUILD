@@ -1,18 +1,18 @@
 # Maintainer: Andrea Brancaleni <miwaxe@gmail.com>
-pkgname=skype-apparmor
+pkgname=steam-apparmor
 pkgver=0.1
-pkgrel=3
-pkgdesc="Skype Apparmor Profile"
+pkgrel=1
+pkgdesc="Steam Apparmor Profile"
 url="http://wiki.apparmor.net/index.php/Main_Page"
 arch=('any')
 license=('GPLv3')
 depends=('apparmor')
-source=('usr.bin.skype')
-md5sums=('7c8d0ccc6a2b7fb1cef5bcd734ead2ad')
+source=('usr.bin.steam')
+md5sums=('f641f10f75c6353456fa38779d3f52fa')
 
 package() {
   mkdir -p "$pkgdir/etc/apparmor.d"
-  install -Dm600 usr.bin.skype "$pkgdir/etc/apparmor.d/usr.bin.skype"
+  install -Dm600 usr.bin.steam "$pkgdir/etc/apparmor.d/usr.bin.steam"
 }
 
 # vim:set ts=2 sw=2 et:

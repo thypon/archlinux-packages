@@ -7,7 +7,7 @@
 	#include <abstractions/nameservice>
 	#include <abstractions/X>
 	#include <abstractions/freedesktop.org>
-	#include <abstractions/pulse>
+	#include <abstractions/audio>
 	#include <abstractions/p11-kit>
 
 	/usr/bin/wine-preloader rix,
@@ -71,7 +71,7 @@
 	profile dosbox {
 		#include <abstractions/base>
 		#include <abstractions/X>
-		#include <abstractions/pulse>
+		#include <abstractions/audio>
 
 		/etc/fstab r,
 		owner @{PROC}/@{pid}/mounts r,
