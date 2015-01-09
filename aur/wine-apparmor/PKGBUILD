@@ -1,12 +1,12 @@
 # Maintainer: Andrea Brancaleni <miwaxe@gmail.com>
 pkgname=wine-apparmor
 pkgver=0.1
-pkgrel=3
+pkgrel=4
 pkgdesc="Wine Apparmor Profile"
 arch=('any')
 url="http://wiki.apparmor.net/index.php/Main_Page"
 license=('GPLv3')
-depends=('apparmor')
+depends=('apparmor' 'wine')
 source=('usr.bin.wineserver'
         'usr.bin.wine-preloader')
 md5sums=('277abdd58cb0b9383634e74ab7349324'
