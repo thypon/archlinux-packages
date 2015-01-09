@@ -72,7 +72,6 @@
 		#include <abstractions/base>
 		#include <abstractions/X>
 		#include <abstractions/pulse>
-		#include <abstractions/site/base>
 
 		/etc/fstab r,
 		owner @{PROC}/@{pid}/mounts r,

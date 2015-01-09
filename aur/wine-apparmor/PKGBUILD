@@ -1,7 +1,7 @@
 # Maintainer: Andrea Brancaleni <miwaxe@gmail.com>
 pkgname=wine-apparmor
 pkgver=0.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Wine Apparmor Profile"
 arch=('any')
 license=('GPLv3')
@@ -10,12 +10,12 @@ optdepends=('apparmor')
 source=('usr.bin.wineserver'
         'usr.bin.wine-preloader')
 md5sums=('277abdd58cb0b9383634e74ab7349324'
-         '7c636e5ba52efe0c78c341d5390ec3d5')
+         'b5958c953691e20c14567066abfee456')
 
 package() {
   mkdir -p "$pkgdir/etc/apparmor.d"
-  install -Dm700 usr.bin.wine-preloader "$pkgdir/etc/apparmor.d/usr.bin.wine-preloader"
-  install -Dm700 usr.bin.wineserver "$pkgdir/etc/apparmor.d/usr.bin.wineserver"
+  install -Dm600 usr.bin.wine-preloader "$pkgdir/etc/apparmor.d/usr.bin.wine-preloader"
+  install -Dm600 usr.bin.wineserver "$pkgdir/etc/apparmor.d/usr.bin.wineserver"
 }
 
 # vim:set ts=2 sw=2 et:
