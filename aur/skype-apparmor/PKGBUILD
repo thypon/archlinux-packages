@@ -3,6 +3,7 @@ pkgname=skype-apparmor
 pkgver=0.1
 pkgrel=2
 pkgdesc="Skype Apparmor Profile"
+url="http://wiki.apparmor.net/index.php/Main_Page"
 arch=('any')
 license=('GPLv3')
 depends=('apparmor-profiles')
