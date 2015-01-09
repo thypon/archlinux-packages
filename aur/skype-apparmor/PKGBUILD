@@ -1,0 +1,18 @@
+# Maintainer: Andrea Brancaleni <miwaxe@gmail.com>
+pkgname=skype-apparmor
+pkgver=0.1
+pkgrel=1
+pkgdesc="Skype Apparmor Profile"
+arch=('any')
+license=('GPLv3')
+depends=('apparmor-profiles')
+optdepends=('apparmor')
+source=('usr.bin.skype')
+md5sums=('7c8d0ccc6a2b7fb1cef5bcd734ead2ad')
+
+package() {
+  mkdir -p "$pkgdir/etc/apparmor.d"
+  install -Dm700 usr.bin.skype "$pkgdir/etc/apparmor.d/usr.bin.skype"
+}
+
+# vim:set ts=2 sw=2 et:
