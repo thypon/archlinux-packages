@@ -28,6 +28,17 @@ task :source do
   end
 end
 
+task :build do
+  repos.each do |r|
+    Dir["#{r}/*/"].each do |pack|
+      Dir.chdir(pack) do
+	puts "Building Package for #{pack}"
+	`makepkg -c -f`
+      end
+    end
+  end
+end
+
 task :clean do
   puts "Cleaning the Repository"
   `git clean -f -d -x`
