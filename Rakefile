@@ -22,7 +22,7 @@ task :source do
     Dir["#{r}/*/"].each do |pack|
       Dir.chdir(pack) do
 	puts "Creating Source Package for #{pack}"
-	`makepkg --source --skippgpcheck`
+	`makepkg -f --source --skippgpcheck`
       end
     end
   end
