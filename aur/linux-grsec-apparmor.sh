@@ -1,6 +1,10 @@
 #!/bin/bash
+pushd `dirname $0` > /dev/null
+SCRIPTPATH=`pwd -P`
+popd > /dev/null
+
 NAME="linux-grsec-apparmor"
-LOCATION="./$NAME"
+LOCATION="$SCRIPTPATH/$NAME"
 BASEPKG="community/linux-grsec"
 
 TMPABS=$(mktemp -d)
