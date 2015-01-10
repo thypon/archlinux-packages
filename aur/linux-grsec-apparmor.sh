@@ -30,4 +30,4 @@ echo "$CONF" >> $LOCATION/config
 echo "$CONF" >> $LOCATION/config.x86_64
 updpkgsums $LOCATION/PKGBUILD
 chmod 644 $LOCATION/*
-
+mv $LOCATION/linux-grsec.install $LOCATION/$NAME.install

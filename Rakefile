@@ -22,7 +22,7 @@ task :source do
     Dir["#{r}/*/"].each do |pack|
       Dir.chdir(pack) do
 	puts "Creating Source Package for #{pack}"
-	`makepkg --source`
+	`makepkg --source --skippgpcheck`
       end
     end
   end
@@ -33,7 +33,7 @@ task :build do
     Dir["#{r}/*/"].each do |pack|
       Dir.chdir(pack) do
 	puts "Building Package for #{pack}"
-	`makepkg -c -f`
+	`makepkg -c -f --skippgpcheck`
       end
     end
   end
