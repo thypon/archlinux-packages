@@ -12,7 +12,7 @@ task :prepare => :pull do
   repos.each do |r|
     Dir["#{r}/*.sh"].each do |s|
       puts "Executing #{s}"
-      `#{s}`
+      `#{s}` unless Dir.exist? s[0..-4]
     end
   end
 end
