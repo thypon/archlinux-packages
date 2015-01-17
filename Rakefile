@@ -17,6 +17,7 @@ task :prepare => :pull do
     end
     Dir["#{r}/*.patch"].each do |p|
       Dir.chdir(p[0..-7]) do
+        puts "Patching #{File.basename p}"
         `patch -p1 < ../#{File.basename p}`
         `updpkgsums`
       end
