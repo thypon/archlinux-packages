@@ -6,6 +6,7 @@ task :pull do
   puts "Pulling Repository"
   `git pull`
   `git submodule foreach git pull`
+  `git submodule foreach git reset --hard HEAD`
 end
 
 task :prepare => :pull do
@@ -13,6 +14,12 @@ task :prepare => :pull do
     Dir["#{r}/*.sh"].each do |s|
       puts "Executing #{s}"
       `#{s}` unless Dir.exist? s[0..-4]
+    end
+    Dir["#{r}/*.patch"].each do |p|
+      Dir.chdir(p[0..-7]) do
+        `patch -p1 < ../#{File.basename p}`
+        `updpkgsums`
+      end
     end
   end
 end
