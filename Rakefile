@@ -5,8 +5,8 @@ task :default => [:prepare, :source]
 task :pull do
   puts "Pulling Repository"
   `git pull`
-  `git submodule foreach git pull`
   `git submodule foreach git reset --hard HEAD`
+  `git submodule foreach git pull`
 end
 
 task :prepare => :pull do
