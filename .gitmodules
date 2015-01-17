@@ -1,3 +1,0 @@
-[submodule "aur/linux-pax-apparmor"]
-	path = aur/linux-pax-apparmor
-	url = https://github.com/nning/linux-pax
